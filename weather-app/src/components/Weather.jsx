@@ -2,9 +2,14 @@
 
 export const Weather = ({name, region, data}) => {
 
+    const weekdays = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'];
+    let date = new Date(data.date);
+    let day = date.getDay();
+
     return(
         <>
             <div className="weather">
+                <div className="weekday">{weekdays[day]}</div>
                 <div className="date">{data.date}</div>
                 <div className="city">{name}</div>
                 <div className="region">{region}</div>

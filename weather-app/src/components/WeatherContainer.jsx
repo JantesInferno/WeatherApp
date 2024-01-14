@@ -26,6 +26,7 @@ const WeatherContainer = () => {
         GetWeatherForecast(input).then(response => {
             setData(response);
             setCoordinates({lat: response.location.lat, lng: response.location.lon});
+            setSearchInput({name: response.location.name, region: response.location.region, country: response.location.country});
         });
     }
 
