@@ -37,7 +37,7 @@
 }
 
 .mapContainer {
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,7 +61,8 @@
         border-radius: 4px;
         color: white;
         padding: 5px;
-
+        transition: border-color 0.25s;
+        
         &:hover {
             border-color: lightgreen;
         }

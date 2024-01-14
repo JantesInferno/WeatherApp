@@ -22,9 +22,9 @@
         justify-content: space-around;
         align-items: center;
 
-        width: 200px;
-        height: 200px;
-        border: 1px solid gray;
+        width: 250px;
+        height: 250px;
+        border: 2px solid gray;
         border-radius: 20% 20%;
         margin-right: 5px;
         margin-left: 5px;
@@ -71,13 +71,15 @@
     }
 }
 
-.weatherButton {
+.weatherButtonList {
     margin-top: 10px;
     background-color: #1d1d1d;
     cursor: pointer;
     border-radius: 8px;
     padding: 8px;
     border: 2px solid gray;
+    transition: border-color 0.25s;
+
     &:hover {
         border-color: lightgreen;
     }

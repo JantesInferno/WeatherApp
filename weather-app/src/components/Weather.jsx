@@ -9,6 +9,7 @@ export const Weather = ({name, region, data}) => {
                 <div className="city">{name}</div>
                 <div className="region">{region}</div>
                 <img src={data.day.condition.icon} alt="väderbeskrivning"/>
+                <div className="desc">{data.day.condition.text}</div>
                 <div className="temperature"><div className="max">{data.day.maxtemp_c}°C</div> / <div className="min">{data.day.mintemp_c}°C</div></div>
             </div>
         </>

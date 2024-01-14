@@ -11,7 +11,7 @@ const WeatherContainer = () => {
 
     const [data, setData] = useState({});
     const [days, setDays] = useState({value : 1});
-    const [detailedWeather, setDetailedWeather] = useState({active : false});
+    const [listWeather, setListWeather] = useState({active: false});
     const [searchInput, setSearchInput] = useState({name: '', region: '', country: ''});
     const [coordinates, setCoordinates] = useState({lat: 0, lng: 0});
 
@@ -29,14 +29,14 @@ const WeatherContainer = () => {
         });
     }
 
-    const ShowDetailedWeather = () => {
+    const ShowListWeather = () => {
         if (days.value == 5) {
             setDays({value: 1})
-            setDetailedWeather({active : false});
+            setListWeather({active : false});
         }
         else {
             setDays({value: 5});
-            setDetailedWeather({active : true});
+            setListWeather({active : true});
         }
     }
 
@@ -48,7 +48,12 @@ const WeatherContainer = () => {
             <GoogleMapContainer mapSearchPlaceholder={UpdateInputFromMap} center={coordinates} windowInfo={searchInput}/>
         </div>
         <div className="contentContainer">
-            <WeatherList data={data} numberOfDays={days} detailedWeather={detailedWeather} weatherButton={ShowDetailedWeather}/>
+            <WeatherList 
+                data={data} 
+                numberOfDays={days} 
+                listWeather={listWeather} 
+                weatherListButton={ShowListWeather} 
+            />
         </div>
         </>
     )

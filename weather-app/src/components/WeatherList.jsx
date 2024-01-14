@@ -1,7 +1,7 @@
-import {Weather} from "./Weather";
+import { Weather } from "./Weather";
 import '../styles/contentContainer.css';
 
-export const WeatherList = ({data, numberOfDays, detailedWeather, weatherButton}) => {
+export const WeatherList = ({data, numberOfDays, listWeather, weatherListButton}) => {
 
     if (data.location != undefined) {
 
@@ -18,10 +18,10 @@ export const WeatherList = ({data, numberOfDays, detailedWeather, weatherButton}
             />);
         }
 
-        let buttonText = "Visa 5dygnsprognos";
+        let buttonTextDays = "Visa 5-dygnsprognos";
 
-        if (detailedWeather.active == true) {
-            buttonText = "Dölj 5dygnsprognos";
+        if (listWeather.active) {
+            buttonTextDays = "Dölj 5-dygnsprognos";
         }
 
         return(
@@ -29,7 +29,7 @@ export const WeatherList = ({data, numberOfDays, detailedWeather, weatherButton}
                 <div className="weatherList">
                     {weatherComponents}
                 </div>
-                <button className="weatherButton" onClick={weatherButton}>{buttonText}</button>
+                <button className="weatherButtonList" onClick={weatherListButton}>{buttonTextDays}</button>
             </>
         )
     }

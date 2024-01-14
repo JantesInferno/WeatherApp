@@ -6,7 +6,7 @@ import '../styles/headerContainer.css';
 
 const libraries = ['places'];
 const mapContainerStyle = {
-  width: '300px',
+  width: '525px',
   height: '300px',
   display: 'flex',
   border: '5px solid #1d1d1d',
