@@ -45,7 +45,7 @@ const WeatherContainer = () => {
         <div className="headerContainer">
             <Header />
             <SearchBar searchButtonClick={GetData} searchInput={searchInput} />
-            <GoogleMapContainer mapSearchPlaceholder={UpdateInputFromMap} center={coordinates} windowInfo={searchInput}/>
+            <GoogleMapContainer mapSearchInput={UpdateInputFromMap} center={coordinates} windowInfo={searchInput}/>
         </div>
         <div className="contentContainer">
             <WeatherList 

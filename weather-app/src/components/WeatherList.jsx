@@ -15,6 +15,7 @@ export const WeatherList = ({data, numberOfDays, listWeather, weatherListButton}
                 name={name} 
                 region={region} 
                 data={forecastDays[i]} 
+                key={i}
             />);
         }
 

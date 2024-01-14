@@ -13,14 +13,14 @@ const mapContainerStyle = {
   borderRadius: '10px'
 };
 
-const GoogleMapContainer = ({mapSearchPlaceholder, windowInfo, center}) => {
+const GoogleMapContainer = ({mapSearchInput, windowInfo, center}) => {
 
   const [marker, setMarker] = useState({lat: 0, lng: 0});
   const [infoWindowOpen, setInfoWindowOpen] = useState(false);
 
   const OnMapClick = (e) => {
     setMarker({lat: e.latLng.lat(), lng: e.latLng.lng()});
-    mapSearchPlaceholder({lat: e.latLng.lat(), lng: e.latLng.lng()});
+    mapSearchInput({lat: e.latLng.lat(), lng: e.latLng.lng()});
     setInfoWindowOpen(true);
   };
 
@@ -31,8 +31,7 @@ const GoogleMapContainer = ({mapSearchPlaceholder, windowInfo, center}) => {
               lng: pos.coords.longitude,
          };
         setMarker(newUserPos);
-        mapSearchPlaceholder(newUserPos);
-        console.log(newUserPos);
+        mapSearchInput(newUserPos);
    }, (err) => {
         console.log(err);
    });
@@ -42,7 +41,6 @@ const GoogleMapContainer = ({mapSearchPlaceholder, windowInfo, center}) => {
     setMarker(center);
   }, [center])
 
-  console.log(center);
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_REACT_APP_GOOGLE_API_KEY,
@@ -69,7 +67,7 @@ const GoogleMapContainer = ({mapSearchPlaceholder, windowInfo, center}) => {
         {infoWindowOpen && (
             <InfoWindowF onCloseClick={() => setInfoWindowOpen(false)}>
               <div className='mapsWindow'>
-                <p>{windowInfo.name}</p>
+                <h4>{windowInfo.name}</h4>
                 <p>{windowInfo.region}</p>
                 <p>{windowInfo.country}</p>
                 </div>

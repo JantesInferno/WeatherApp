@@ -4,7 +4,7 @@ import '../styles/headerContainer.css';
 
 export const SearchBar = ({searchButtonClick, searchInput}) => {
 
-    const [input, setInput] = useState({});
+    const [input, setInput] = useState({name: ''});
     const [suggestion, setSuggestions] = useState();
 
     let searchRef = useRef();
@@ -16,13 +16,10 @@ export const SearchBar = ({searchButtonClick, searchInput}) => {
     const HandleChange = () => {
         setInput(searchRef.current.value);
         LoadAutoComplete(searchRef.current.value).then(response => {
-            console.log("LoadAutoComplete");
-            console.log(response);
             let output = response.map((x, i) => {
                 return (<button onClick={() => searchButtonClick(`${x.name},${x.region}`)} key={i} className='suggestion'>{x.name}, {x.region}</button>)
             })
             setSuggestions(output);
-            console.log(suggestion);
         })
     }
 
