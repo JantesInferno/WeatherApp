@@ -7,15 +7,23 @@
     }
     .weather:nth-child(2) {
         background-color: #272727;
+        animation-name: appear;
+        animation-duration: 1s;
     }
     .weather:nth-child(3) {
         background-color: #313131;
+        animation-name: appear;
+        animation-duration: 2s;
     }
     .weather:nth-child(4) {
         background-color: #3b3b3b;
+        animation-name: appear;
+        animation-duration: 3s;
     }
     .weather:nth-child(5) {
         background-color: #454545;
+        animation-name: appear;
+        animation-duration: 4s;
     }
     .weather {
         display: flex;
@@ -31,7 +39,7 @@
         margin-left: 5px;
         margin-top: 10px;
         box-shadow: 6px 5px 15px 0 black;
-        transition: all 5s;
+        
 
         .city {
             margin-top: -8px;
@@ -77,6 +85,14 @@
         width: 70px;
         height: 70px;
     }
+}
+
+.weather-fade-hide {
+    opacity: 0;
+}
+
+.weather-fade-show {
+    opacity: 1;
 }
 
 .weatherButtonList {
@@ -140,3 +156,14 @@
     }
 
 }
+
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+

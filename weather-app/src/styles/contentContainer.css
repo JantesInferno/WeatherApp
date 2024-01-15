@@ -6,15 +6,23 @@
 }
 .weatherList .weather:nth-child(2) {
   background-color: #272727;
+  animation-name: appear;
+  animation-duration: 1s;
 }
 .weatherList .weather:nth-child(3) {
   background-color: #313131;
+  animation-name: appear;
+  animation-duration: 2s;
 }
 .weatherList .weather:nth-child(4) {
   background-color: #3b3b3b;
+  animation-name: appear;
+  animation-duration: 3s;
 }
 .weatherList .weather:nth-child(5) {
   background-color: #454545;
+  animation-name: appear;
+  animation-duration: 4s;
 }
 .weatherList .weather {
   display: flex;
@@ -29,7 +37,6 @@
   margin-left: 5px;
   margin-top: 10px;
   box-shadow: 6px 5px 15px 0 black;
-  transition: all 5s;
 }
 .weatherList .weather .city {
   margin-top: -8px;
@@ -66,6 +73,14 @@
   margin-top: -5px;
   width: 70px;
   height: 70px;
+}
+
+.weather-fade-hide {
+  opacity: 0;
+}
+
+.weather-fade-show {
+  opacity: 1;
 }
 
 .weatherButtonList {
@@ -120,4 +135,13 @@
 }
 .favoritesContainer .favorite:hover {
   border-color: lightgreen;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=contentContainer.css.map */
