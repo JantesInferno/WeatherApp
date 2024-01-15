@@ -23,7 +23,6 @@ const WeatherContainer = () => {
         if (data !== null) {
             setFavorites(JSON.parse(data));
         }
-        console.log(favorites);
       }, []);
       
       useEffect(() => {
@@ -33,13 +32,15 @@ const WeatherContainer = () => {
                 JSON.stringify(favorites)
               );
         }
-        console.log(favorites);
       }, [favorites]);
 
     const UpdateInputFromMap = (e) => {
         GetWeatherForecast(`${e.lat},${e.lng}`).then(response => {
             setData(response);
-            setSearchInput({name: response.location.name, region: response.location.region, country: response.location.country}); 
+            if (response.error === undefined)
+                setSearchInput({name: response.location.name, region: response.location.region, country: response.location.country}); 
+            else
+                setSearchInput({name: 'Unknown'})
         });
     }
 
@@ -67,7 +68,6 @@ const WeatherContainer = () => {
     }
 
     const SaveLocation = () => {
-        console.log(favorites);
         if (!favorites.some(item => `${searchInput.name}, ${searchInput.region}, ${searchInput.country}` === item )) {
             setFavorites(prev => [...prev, `${searchInput.name}, ${searchInput.region}, ${searchInput.country}`]);
         }
@@ -97,15 +97,16 @@ const WeatherContainer = () => {
                 listWeather={listWeather} 
                 weatherListButton={ShowListWeather} 
             />
+            <div className='favoritesHeartContainer'>
+                <svg onClick={ShowFavorites} xmlns="http://www.w3.org/2000/svg" className="heartIcon" width="33" height="33" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M12 20l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.907 6.12" />
+                    <path d="M19 16v6" />
+                    <path d="M22 19l-3 3l-3 -3" />
+                </svg>
+            </div>
         </div>
-        <div className='favoritesHeartContainer'>
-            <svg onClick={ShowFavorites} xmlns="http://www.w3.org/2000/svg" className="heartIcon" width="33" height="33" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 20l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.907 6.12" />
-                <path d="M19 16v6" />
-                <path d="M22 19l-3 3l-3 -3" />
-            </svg>
-        </div>
+    
 
         <FavoritesList favorites={favorites} active={favoriteActive} favoriteClick={GetData} />
         </>

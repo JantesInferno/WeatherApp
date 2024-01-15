@@ -2,14 +2,6 @@ import { Favorite } from './Favorite.jsx';
 
 export const FavoritesList = ({favorites, active, favoriteClick}) => {
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    };
-
     let favoriteComponents = []
 
     if (active) {

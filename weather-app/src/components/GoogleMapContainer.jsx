@@ -3,13 +3,12 @@ import { GoogleMap, useLoadScript, MarkerF, InfoWindowF } from '@react-google-ma
 import { useState, useEffect } from 'react';
 import '../styles/headerContainer.css';
 
-
 const libraries = ['places'];
 const mapContainerStyle = {
   width: '525px',
   height: '300px',
   display: 'flex',
-  border: '5px solid #1d1d1d',
+  border: '5px solid #1a1a1a',
   borderRadius: '10px'
 };
 
@@ -66,8 +65,9 @@ const GoogleMapContainer = ({mapSearchInput, windowInfo, center, addToFavorites,
   }
 
   let favoriteContainer;
-  if (!favorites.some(item => `${windowInfo.name}, ${windowInfo.region}, ${windowInfo.country}` === item 
-  || `${windowInfo.name}, ${windowInfo.region}, ${windowInfo.country}` === item.replace(/[åä]/g,'a').replace(/[ö]/g, 'o').replace(/[ÅÄ]/g, 'A').replace(/Ö/g, 'Ö'))) {
+  if (!favorites.some(item => (`${windowInfo.name}, ${windowInfo.region}, ${windowInfo.country}` === item 
+  || `${windowInfo.name}, ${windowInfo.region}, ${windowInfo.country}` === item.replace(/[åä]/g,'a').replace(/[ö]/g, 'o').replace(/[ÅÄ]/g, 'A').replace(/Ö/g, 'Ö'))
+  || windowInfo.name == 'Unknown')) {
     favoriteContainer =
       <svg onClick={addToFavorites} xmlns="http://www.w3.org/2000/svg" className="heartIcon" width="22" height="22" viewBox="0 0 24 24" strokeWidth="1.5" stroke="black" fill="none" strokeLinecap="round" strokeLinejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
