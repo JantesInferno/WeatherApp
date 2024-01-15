@@ -1,5 +1,6 @@
 .weatherList {
     display: flex;
+    
 
     .weather:first-child {
         background-color: #1d1d1d;
@@ -24,11 +25,12 @@
 
         width: 250px;
         height: 250px;
-        border: 2px solid gray;
+        border: 1px solid gray;
         border-radius: 20% 20%;
         margin-right: 5px;
         margin-left: 5px;
         margin-top: 10px;
+        box-shadow: 0 0 10px 0 black;
 
         .city {
             margin-top: -8px;
@@ -85,6 +87,7 @@
     padding: 8px;
     border: 2px solid gray;
     transition: border-color 0.25s;
+    box-shadow: 0 2px 8px 0 black;
 
     &:hover {
         border-color: lightgreen;

@@ -7,21 +7,18 @@
 
 .searchContainer {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  padding: 2%;
+  margin-bottom: 8px;
 }
-
-.searchBox {
+.searchContainer .searchBox {
   display: flex;
   width: 70%;
-  border-radius: 8px;
+  border-radius: 8px 0 0 8px;
   border: 1px solid white;
   padding: 5px;
-  padding-right: 10px;
 }
-
-.searchButton {
-  margin-left: -5%;
+.searchContainer .searchButton {
   height: 28px;
   width: 20%;
   border-radius: 0 8px 8px 0;
@@ -29,8 +26,9 @@
   background-color: black;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-left: -2px;
 }
-.searchButton:hover {
+.searchContainer .searchButton:hover {
   border-color: lightgreen;
 }
 
