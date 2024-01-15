@@ -3,7 +3,6 @@ import { GoogleMap, useLoadScript, MarkerF, InfoWindowF } from '@react-google-ma
 import { useState, useEffect } from 'react';
 import '../styles/headerContainer.css';
 
-
 const libraries = ['places'];
 const mapContainerStyle = {
   width: '525px',
