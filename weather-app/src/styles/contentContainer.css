@@ -21,13 +21,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border: 1px solid gray;
   border-radius: 20% 20%;
   margin-right: 5px;
   margin-left: 5px;
   margin-top: 10px;
+  box-shadow: 6px 5px 15px 0 black;
 }
 .weatherList .weather .city {
   margin-top: -8px;
@@ -41,8 +42,12 @@
   font-weight: 500;
 }
 .weatherList .weather .date {
-  font-size: 0.9em;
+  margin-top: -10px;
+  font-size: 0.75em;
   font-weight: 100;
+}
+.weatherList .weather .weekday {
+  font-weight: 500;
 }
 .weatherList .weather .temperature {
   display: flex;
@@ -51,25 +56,66 @@
   font-weight: 500;
 }
 .weatherList .weather .temperature .max {
-  color: #fcbdbd;
+  color: #db6565;
 }
 .weatherList .weather .temperature .min {
-  color: #c3bdfc;
+  color: #7f7bed;
 }
 .weatherList img {
   margin-top: -5px;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
 }
 
-.weatherButton {
+.weatherButtonList {
   margin-top: 10px;
   background-color: #1d1d1d;
   cursor: pointer;
   border-radius: 8px;
   padding: 8px;
   border: 2px solid gray;
+  transition: border-color 0.25s;
+  box-shadow: 0 5px 15px 0 black;
 }
-.weatherButton:hover {
+.weatherButtonList:hover {
+  border-color: lightgreen;
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+}
+
+.favoritesHeartContainer .heartIcon {
+  margin-top: 10px;
+  border: 2px solid gray;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px 0 black;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+.favoritesHeartContainer .heartIcon:hover {
+  border-color: lightgreen;
+  transform: scale(1.2);
+  transform-origin: 35% 50%;
+}
+
+.favoritesContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  height: auto;
+  margin-top: 10px;
+}
+.favoritesContainer .favorite {
+  font-size: 0.75em;
+  margin: 2px;
+  background-color: #1d1d1d;
+  border: 2px solid #111111;
+  border-radius: 4px;
+  color: white;
+  padding: 5px;
+  transition: border-color 0.25s;
+}
+.favoritesContainer .favorite:hover {
   border-color: lightgreen;
 }/*# sourceMappingURL=contentContainer.css.map */
