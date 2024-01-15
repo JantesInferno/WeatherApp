@@ -30,7 +30,7 @@
         margin-right: 5px;
         margin-left: 5px;
         margin-top: 10px;
-        box-shadow: 0 0 10px 0 black;
+        box-shadow: 6px 5px 15px 0 black;
 
         .city {
             margin-top: -8px;
@@ -54,7 +54,6 @@
         .weekday {
             font-weight: 500;
         }
-
 
         .temperature {
             display: flex;
@@ -87,9 +86,56 @@
     padding: 8px;
     border: 2px solid gray;
     transition: border-color 0.25s;
-    box-shadow: 0 2px 8px 0 black;
+    box-shadow: 0 5px 15px 0 black;
 
     &:hover {
         border-color: lightgreen;
+        transform: scale(1.2);
+        transform-origin: 50% 50%;
     }
+}
+
+
+.favoritesHeartContainer {
+    .heartIcon {
+        margin-top: 10px;
+        border: 2px solid gray;
+        padding: 4px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px 0 black;
+        pointer-events:stroke;
+        cursor: pointer;
+        &:hover {
+            border-color: lightgreen;
+            transform: scale(1.2);
+            transform-origin: 35% 50%;
+        }
+    }
+}
+
+
+
+.favoritesContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+    height: auto;
+    margin-top: 10px;
+
+    .favorite {
+        font-size: 0.75em;
+        margin: 2px;
+        background-color: #1d1d1d;
+        border: 2px solid #111111;
+        border-radius: 4px;
+        color: white;
+        padding: 5px;
+        transition: border-color 0.25s;
+        
+        &:hover {
+            border-color: lightgreen;
+        }
+    }
+
 }

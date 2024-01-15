@@ -13,7 +13,7 @@
 }
 .searchContainer .searchBox {
   display: flex;
-  width: 70%;
+  width: 62%;
   border-radius: 8px 0 0 8px;
   border: 1px solid white;
   padding: 5px;
@@ -39,8 +39,20 @@
   justify-content: center;
 }
 .mapContainer .mapsWindow {
-  text-align: center;
   color: black;
+  text-align: left;
+}
+.mapContainer .mapsWindow p, .mapContainer .mapsWindow h4 {
+  margin: 5px 0;
+}
+.mapContainer .mapsWindow .heartIcon {
+  pointer-events: stroke;
+  cursor: pointer;
+}
+.mapContainer .mapsWindow .heartIcon:hover {
+  stroke: lightgreen;
+  transform: scale(1.4);
+  transform-origin: 35% 50%;
 }
 
 .suggestionContainer {
