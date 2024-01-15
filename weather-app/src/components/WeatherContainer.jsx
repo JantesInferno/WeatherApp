@@ -23,7 +23,6 @@ const WeatherContainer = () => {
         if (data !== null) {
             setFavorites(JSON.parse(data));
         }
-        console.log(favorites);
       }, []);
       
       useEffect(() => {
@@ -33,13 +32,15 @@ const WeatherContainer = () => {
                 JSON.stringify(favorites)
               );
         }
-        console.log(favorites);
       }, [favorites]);
 
     const UpdateInputFromMap = (e) => {
         GetWeatherForecast(`${e.lat},${e.lng}`).then(response => {
             setData(response);
-            setSearchInput({name: response.location.name, region: response.location.region, country: response.location.country}); 
+            if (response.error === undefined)
+                setSearchInput({name: response.location.name, region: response.location.region, country: response.location.country}); 
+            else
+                setSearchInput({name: 'Unknown'})
         });
     }
 
@@ -67,7 +68,6 @@ const WeatherContainer = () => {
     }
 
     const SaveLocation = () => {
-        console.log(favorites);
         if (!favorites.some(item => `${searchInput.name}, ${searchInput.region}, ${searchInput.country}` === item )) {
             setFavorites(prev => [...prev, `${searchInput.name}, ${searchInput.region}, ${searchInput.country}`]);
         }
