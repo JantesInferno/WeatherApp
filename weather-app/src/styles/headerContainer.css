@@ -8,28 +8,45 @@
 .searchContainer {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  margin: 0 auto;
   margin-bottom: 8px;
+  width: 80%;
+  outline: 2px solid gray;
+  border-radius: 25px;
+}
+.searchContainer:focus-within {
+  outline: 2px solid lightgreen;
+  border: none;
 }
 .searchContainer .searchBox {
-  display: flex;
-  width: 62%;
-  border-radius: 8px 0 0 8px;
-  border: 1px solid white;
+  display: inline-block;
+  width: 90%;
+  font-size: 1.1em;
+  background-color: inherit;
+  border: none;
   padding: 5px;
+  padding-left: 20px;
+}
+.searchContainer .searchBox:focus {
+  outline: none;
 }
 .searchContainer .searchButton {
-  height: 28px;
-  width: 20%;
-  border-radius: 0 8px 8px 0;
-  border: 2px solid white;
-  background-color: black;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: inherit;
+  padding: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
-  margin-left: -2px;
+  transition: background-color 0.3s;
 }
 .searchContainer .searchButton:hover {
-  border-color: lightgreen;
+  background-color: black;
+}
+.searchContainer .searchButton:hover .searchIcon {
+  margin: 5px;
+}
+.searchContainer .searchButton .searchIcon {
+  margin: 5px;
 }
 
 .mapContainer {
@@ -48,6 +65,7 @@
 .mapContainer .mapsWindow .heartIcon {
   pointer-events: stroke;
   cursor: pointer;
+  transition: all 0.2s;
 }
 .mapContainer .mapsWindow .heartIcon:hover {
   stroke: lightgreen;
@@ -60,13 +78,14 @@
   margin: 0 5%;
 }
 .suggestionContainer .suggestion {
+  font-size: 0.75em;
   margin: 2px;
   background-color: #1d1d1d;
   border: 2px solid #111111;
   border-radius: 4px;
   color: white;
   padding: 5px;
-  transition: border-color 0.25s;
+  transition: border-color 0.2s;
 }
 .suggestionContainer .suggestion:hover {
   border-color: lightgreen;

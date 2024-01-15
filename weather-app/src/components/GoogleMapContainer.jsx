@@ -8,7 +8,7 @@ const mapContainerStyle = {
   width: '525px',
   height: '300px',
   display: 'flex',
-  border: '5px solid #1d1d1d',
+  border: '5px solid #1a1a1a',
   borderRadius: '10px'
 };
 
