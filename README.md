@@ -1,5 +1,7 @@
-
 # React Weather App with Location Visualization
+
+<img src='./Github_Images/homepage.png' height=200px> <img src='./Github_Images/3days.png' height=200px> <img src='./Github_Images/google_maps.png' height=200px> <img src='./Github_Images/search.png' height=200px>
+
 ## Project Overview
 This repository contains a weather app built using React that retrieves weather data from the WeatherAPI. Additionally, it utilizes the Google Maps API to visually select locations for weather information. The app includes features to fetch weather data for the current location and save favorite locations.
 
